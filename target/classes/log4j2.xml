@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" name="Post-Expo" packages="com.post.expo">
+  <Appenders>
+    <RollingFile name="RollingFile" fileName="C:\\post-expo-log\\server.log"
+                 filePattern="C:\\post-expo-log\\$${date:yyyy-MM}\\app-%d{MM-dd-yyyy}-%i.log.gz">
+      <PatternLayout>
+        <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n</Pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy />
+        <SizeBasedTriggeringPolicy size="10 MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="100"/>
+    </RollingFile>
+    <Console name="console-log" target="SYSTEM_OUT">
+        <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Root level="error">
+      <AppenderRef ref="RollingFile"/>
+      <!--<AppenderRef ref="console-log"/>-->
+    </Root>
+  </Loggers>
+</Configuration>

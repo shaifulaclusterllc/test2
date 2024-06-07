@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: com.post.expo.Main
+Class-Path: resources/log4j2.xml
+
